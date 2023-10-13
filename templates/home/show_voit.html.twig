@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Détails Article {% endblock %}
+
+{% block body %}
+{% include "navbar/navbar.html.twig" %}   
+<div class="example-wrapper">
+    <h1> Détails Article </h1>
+</div>
+<div class="container">
+    <h5 class="nom"> {{voiture.nom }}</h5>
+    <div class="img-fluid">
+        <img src="{{voiture.image}}" alt="{{ voiture.nom }}">
+    </div>
+    <div class="content">
+        <p class="date">Ecrit le {{ voiture.createAt | date("d.m.y")  }} à {{ voiture.createAt | date("H:m") }}</p>
+        <p class="nb_km">{{ voiture.nbKm | raw }}</p>
+    </div>  
+</div>
+
+{% endblock %}
