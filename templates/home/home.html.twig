@@ -1,32 +1,28 @@
 {% extends 'base.html.twig' %} 
 
 {% block title %}
-Hello HomeController!
+
 {% endblock %} 
 
 {% block body %}
-{% include "navbar/navbar.html.twig" %}   
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
 
 <div class="example-wrapper">
+  <h1>Liste</h1>
 
   <div class="row row-cols-1 row-cols-md-2 g-4">
     
     {% for voiture in voitures %}
     
       <div class="col">
-        <div class="card">
+        <div class="card bg-transparent border-warning border-2">
             <img src="{{ voiture.image }}" class="card-img-top" alt="...">
             <div class="card-body">
-              <h5 class="card-title link-primary">{{ voiture.nom | upper }}</h5>
+              <h5 class="card-title link-light">{{ voiture.nom | upper }}</h5>
 
-              <a href="{{path('show_voit',{'id': voiture.id})}}" class="btn btn-primary my-2 my-sm-0 link-danger mt-2">En Savoir plus</a>
+              <a href="{{path('show_voit',{'id': voiture.id})}}" class="btn btn-secondary my-2 my-sm-0  mt-2 fw-bolder list-group">En Savoir plus</a>
 
-              <p class="card-text link-warning h6 mt-2">{{ voiture.createAt|date('d.m.Y H:i:s')}}</p>
-              <p class="nb_km">{{ voiture.nbKm | raw }}</p>
+              <p class="card-text link-warning h6 mt-2 fw-semibold">{{ voiture.createAt|date('d.m.Y H:i:s')}}</p>
+              <p class="nb_km link-light fw-semibold">{{ voiture.nbKm | raw }} kms</p>
 
             </div>
           </div>

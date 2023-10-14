@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %} 
+
+{% block title %}
+
+{% endblock %} 
+
+{% block body %}
+<div class="row m-5">
+<h1>Liste des véhicules loués</h1>
+
+    {% for location in locations %}
+        <div class="card col-md-4 link-warning bg-primary border border-danger-subtle border-2" style="width: 18rem;">
+            <p class="date mx-lg-auto fw-bolder">{{ location.dateLocation | date("d/m/y")}}</p>
+            <p class="nb_jr_location link-light fw-semibold">Nombre de jour de location :{{ location.nbJrLocation | raw }} </p>
+            <div class="card-body">
+                <p class="prix_location link-dark fw-semibold">Prix de la location : {{ location.prixLocation | raw }} €</p
+            </div>
+        </div>
+</div>
+    {% endfor %}
+
+{% endblock %}
+
+

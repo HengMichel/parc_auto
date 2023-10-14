@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Repository\VoitureRepository;
 use App\Entity\Voiture;
+use App\Repository\LocationRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -45,6 +46,17 @@ class HomeController extends AbstractController
 
         return $this->render('home/show_voit.html.twig', [
             'voiture'=>$voiture,
+        ]);
+    }
+
+    #[Route('/locationList', name:'list_location')]
+    
+    public function listLocation(LocationRepository $locationRepository): Response
+    {
+        $locations = $locationRepository->findListLocationActif();
+
+        return $this->render('home/list_location.html.twig', [
+            'locations'=>$locations,
         ]);
     }
 }

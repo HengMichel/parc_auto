@@ -29,7 +29,7 @@ class Loueur
     private ?string $adresse = null;
 
     #[ORM\ManyToOne(inversedBy: 'loueurs')]
-    private ?voiture $voiture = null;
+    private ?Voiture $voiture = null;
 
     #[ORM\ManyToMany(targetEntity: Modele::class, inversedBy: 'loueurs')]
     private Collection $modele;

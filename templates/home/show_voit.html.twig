@@ -3,18 +3,17 @@
 {% block title %} Détails Article {% endblock %}
 
 {% block body %}
-{% include "navbar/navbar.html.twig" %}   
 <div class="example-wrapper">
     <h1> Détails Article </h1>
 </div>
 <div class="container">
-    <h5 class="nom"> {{voiture.nom }}</h5>
-    <div class="img-fluid">
+    <h5 class="nom link-warning"> {{voiture.nom }}</h5>
+    <div class="img-fluid border border-2 border-secondary figure ">
         <img src="{{voiture.image}}" alt="{{ voiture.nom }}">
     </div>
     <div class="content">
-        <p class="date">Ecrit le {{ voiture.createAt | date("d.m.y")  }} à {{ voiture.createAt | date("H:m") }}</p>
-        <p class="nb_km">{{ voiture.nbKm | raw }}</p>
+        <p class="date link-warning mt-3 fw-semibold">Ecrit le {{ voiture.createAt | date("d.m.y")  }} à {{ voiture.createAt | date("H:m") }}</p>
+        <p class="nb_km link-light fw-semibold">kilomètrages : {{ voiture.nbKm | raw }} kms</p>
     </div>  
 </div>
 

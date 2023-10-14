@@ -12,7 +12,7 @@ use Doctrine\Bundle\FixturesBundle\Fixture;
 
 class AppFixtures extends Fixture
 {
-    // objectManager permet d'injecter les données dans la bd a l'aide de la methode "persist" et "flush" lui appartenent
+    // objectManager permet d'injecter les données dans la bd a l'aide de la methode "persist" et "flush" lui appartienent
     public function load(ObjectManager $manager): void
     {
         // $product = new Product();
